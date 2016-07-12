@@ -1,0 +1,5 @@
+# export to CSV file
+exiftool -csv "c:\Users\Phil\Images" > "c:\Users\Phil\test.csv"
+
+# export to JSON file
+exiftool -json "c:\Users\Phil\Images" > "c:\Users\Phil\test.json"
