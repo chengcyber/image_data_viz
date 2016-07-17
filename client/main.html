@@ -3,23 +3,47 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
-  {{> info}}
+{{> navbar}}
+{{> home_page}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="navbar">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main_navbar" aria-expanded="false">
+        OPEN
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main_navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="#">metaImage</a></li>
+      </ul>
+    </div>
+
+  </div> <!-- container -->
+</nav>
+
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
+<template name="home_page">
+<div class="container">
+<div class="jumbotron">
+  <h2>Welcome! Here is instruction:</h2>
+  <h3>The site can have any number of pages as long as there is a clear purpose for each one. It must have the following features.</h3>
   <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+    <li>1.Clear navigation allowing the user to move between pages/ functions and to locate relevant information</li>
+    <li>2.Consistent style across the pages through use of CSS</li>
+    <li>3.Responsive layout where the layout changes depending on the size of the browser window.</li>
+    <li>4.Use of Bootstrap</li>
+    <li>5.Clearly stated purpose for each page.</li>
+    <li>6.Clear landing page (this might just be a special page that introduces the site, or some instructions)</li>
+    <li>7.ONLY If you are making a data visualisation app : it should use data from a different source (i.e. not the music data), visualise it in at least on three ways not covered in the example (using viz.js), and be interactive in some way.</li>
   </ul>
+  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+</div>
+</div>
 </template>

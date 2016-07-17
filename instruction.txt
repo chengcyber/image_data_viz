@@ -1,0 +1,10 @@
+The site can have any number of pages as long as there is a clear purpose for each one. It must have the following features.
+
+1.Clear navigation allowing the user to move between pages/ functions and to locate relevant information
+2.Consistent style across the pages through use of CSS
+3.Responsive layout where the layout changes depending on the size of the browser window.
+4.Use of Bootstrap
+5.Clearly stated purpose for each page.
+6.Clear landing page (this might just be a special page that introduces the site, or some instructions)
+8.ONLY If you are making the collaborative drawing app: it should allow the user to specify at least 16 colours, 3 drawing methods (e.g. different brushes, line thickness, or other style feature) and a save or export function.
+9.ONLY If you are making a data visualisation app : it should use data from a different source (i.e. not the music data), visualise it in at least on three ways not covered in the example (using viz.js), and be interactive in some way.
