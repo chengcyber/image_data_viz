@@ -6,8 +6,8 @@ Meteor.startup(() => {
     var fs = Meteor.npmRequire('fs');
     var files = fs.readdirSync('./assets/app/jsonfiles');
     var inserted_images = 0;
-    // for (var i = 0; i < files.length; i++) {
-    for (var i = 0; i < 1; i++) {
+    for (var i = 0; i < files.length; i++) {
+    // for (var i = 0; i < 1; i++) {
       var filename = 'jsonfiles/' + files[i];
 
       try {

@@ -1,11 +1,17 @@
 <head>
   <title>image_data_viz</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.min.css">
 </head>
 
 <body>
-{{> navbar}}
-{{> home_page}}
+
 </body>
+
+<template name="ApplicationLayout">
+  {{> yield "header"}}
+  {{> yield "main"}}
+</template>
 
 <template name="navbar">
 
@@ -20,7 +26,7 @@
     <div class="collapse navbar-collapse" id="main_navbar">
       <ul class="nav navbar-nav">
         <li><a href="/">Home</a></li>
-        <li><a href="#">metaImage</a></li>
+        <li><a href="/imginfo">ImageInfo</a></li>
       </ul>
     </div>
 
@@ -43,7 +49,49 @@
     <li>6.Clear landing page (this might just be a special page that introduces the site, or some instructions)</li>
     <li>7.ONLY If you are making a data visualisation app : it should use data from a different source (i.e. not the music data), visualise it in at least on three ways not covered in the example (using viz.js), and be interactive in some way.</li>
   </ul>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+  <p><a class="btn btn-primary btn-lg" href="/imginfo" role="button">Learn more</a></p>
 </div>
 </div>
+</template>
+
+
+<template name="imginfo_panel">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+        {{> imginfo_feature_select}}
+        {{> imginfo_feature_list}}
+    </div>
+    <div class="col-md-6">
+        {{> imginfo_viz_display}}
+    </div>
+  </div>
+</div>
+</template>
+
+<template name="imginfo_feature_select">
+  <form>
+    Single numeric features:
+    <br/>
+    <select class="js-select-single-feature">
+      {{#each get_feature_name "single"}}
+        <option value="{{name}}">{{name}}</option>
+      {{/each}}
+    </select>
+    <button class="btn js-show-blobs">blobs</button>
+    <button class="btn js-show-curve">curve</button>
+    <button class="btn js-show-timeline">timeline</button>
+  </form>
+</template>
+
+<template name="imginfo_feature_list">
+  <ul>
+  {{#each get_all_feature_values}}
+    <li>{{title}}: {{value}}</li>
+  {{/each}}
+  </ul>
+</template>
+
+<template name="imginfo_viz_display">
+<div id="visjs"></div>
 </template>

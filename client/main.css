@@ -1,3 +1,15 @@
 /* CSS declarations go here */
 ul {  list-style:none;
 }
+
+#visjs{
+  height:500px;
+  border:1px solid black;
+}
+.vis-label{
+  fill-opacity:0;
+}
+
+.vis-label:hover{
+  fill-opacity:1;
+}
